@@ -7,17 +7,20 @@
          function WebSocketTest() {
             document.getElementById("res").innerHTML = "";
             if ("WebSocket" in window) {
+			var i=0;
                var ws = new WebSocket("ws://localhost:8080/hello");	
                ws.onopen = function() {     };
 				
                ws.onmessage = function (evt) { 
+			   i++;
                   var received_msg = evt.data;
 				  	console.log("--------------"+received_msg);
 				  if(received_msg =='200'){
-				  document.getElementById("res").innerHTML += "Successfully reached Rouge Server... Responce code: "+received_msg+"<br>";
+				  document.getElementById("res").innerHTML += "Attempt:"+i+"  :Successfully reached Rouge Server... Responce code: "+received_msg+"<br>";
 				  }else{
-				  document.getElementById("res").innerHTML +="trying to connect..... Responce code "+ received_msg +"<br>";
-				  }  
+				  document.getElementById("res").innerHTML +="Attempt:"+i+"trying to connect..... Responce code "+ received_msg +"<br>";
+				  }
+document.getElementById("sse").style.display ="none";				  
                };
                ws.onclose = function() { 
 				  document.getElementById("res").innerHTML = "Connection is closed...";
@@ -26,16 +29,21 @@
                alert("WebSocket NOT supported by your Browser!");
             }
          }
+		 function reloadPage() {
+		 window.location.reload();
+		 }
       </script>
 		
    </head>
    
    <body>
-      <div id = "sse">
-	  <button type="button" style="
-    display: flex;
-    justify-content: center;
-    align-items: center; font-size:50px;"> <a href = "javascript:WebSocketTest()">Click Here</a></button>
+      <div id = "se">
+	  <button type="button" id = "sse" style="
+     float: left;
+margin-right:10px; font-size:20px;"> <a href = "javascript:WebSocketTest()">Click Here to call server</a></button>
+	<button type="button" id = "sse" style="
+    float: left;
+margin-right:10px; font-size:20px;"> <a href = "javascript:reloadPage()">Click Here to reload page</a></button>
      
 <div id="res" style="height: 100vh;
     display: flex;
