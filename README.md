@@ -1,6 +1,6 @@
 # Walrus Assignment
-Created Service Rouge: which will be accessible on 'http://localhost:8080/rouge' which will respond with responce code 503 ,504 or 200
-Created Service Undeterred: which will be accessible on 'http://localhost:8080/hello-world' which calls Rouge service and respond
+Created Service Rouge: which will be accessible on 'http://localhost:8080/rouge' which will respond with responce code 503 ,504 or 200, 
+Created Service Undeterred: which will be accessible on 'http://localhost:8080/hello-world' which calls Rouge service and respond, 
 server can be accessed from index.html page's button
 
 How to start the Hello application
