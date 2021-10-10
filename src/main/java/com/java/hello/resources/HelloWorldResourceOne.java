@@ -60,7 +60,7 @@ public class HelloWorldResourceOne {
 				return new Saying("Some technical Problem");
 			}
 		}
-		return new Saying("");
+		return new Saying("Hello...");
 	}
 
 }
