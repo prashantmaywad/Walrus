@@ -20,7 +20,7 @@ public class RougeResource {
 	@Timed
 	public Response sayHello(@QueryParam("name") Optional<String> name) {
 		double random = Math.random();
-		if (random <= 0.4) {
+		if (random <= 0.2) {
 			return Response.status(Response.Status.OK).build();
 		} else if (random <= 0.7) {
 			return Response.status(Response.Status.SERVICE_UNAVAILABLE).build();
