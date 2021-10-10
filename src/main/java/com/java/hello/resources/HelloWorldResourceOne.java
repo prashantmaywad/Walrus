@@ -48,6 +48,7 @@ public class HelloWorldResourceOne {
 					flag = true;
 					break;
 				} else {
+					HelloWorldResource.send(Integer.toString(status));
 					logger.info("Failed");
 					backoff.errorOccured();
 				}
